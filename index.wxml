@@ -1,0 +1,54 @@
+<!--subPackages/summary/index/index.wxml-->
+<view class="container">
+  <view class="letter">
+    <view class="left {{ leftClass }}">
+      <view class="cover {{ contentClass }}">
+        <view class="q">我是封面</view>
+      </view>
+
+      <view class="back {{ contentClass }}">
+        <view class="content">我是左</view>
+      </view>
+    </view>
+
+    <view class="middle">
+      <scroll-view
+        bindscroll
+        class="scroll-view"
+        enhanced="{{ true }}"
+        paging-enabled="{{ true }}"
+        scroll-into-view="yoka_{{ currentId }}"
+        scroll-left="0"
+        scroll-top="0"
+        scroll-with-animation="{{ true }}"
+        scroll-y="{{ true }}"
+        show-scrollbar="{{ false }}"
+        upper-threshold="50"
+      >
+        <view
+          class="block-1"
+          id="yoka_1"
+          style="height: {{ sys.windowHeight }}px;"
+        ></view>
+        <view
+          class="block-2"
+          id="yoka_2"
+          style="height: {{ sys.windowHeight }}px;"
+        ></view>
+        <view
+          class="block-3"
+          id="yoka_3"
+          style="height: {{ sys.windowHeight }}px;"
+        ></view>
+      </scroll-view>
+    </view>
+
+    <view class="right {{ rightClass }}">
+      <view class="content">我是右</view>
+    </view>
+  </view>
+</view>
+<view
+  bindtap="toggle"
+  class="openB"
+>打开</view>
